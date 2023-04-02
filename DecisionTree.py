@@ -5,24 +5,24 @@ import matplotlib.pyplot as plt
 
 
 def cross_validation(model, x_data, y_data, k):
-    scores = ['accuracy', 'precision', 'recall', 'f1']
+    scores = ['accuracy', 'precision_micro', 'recall_micro', 'f1_micro']
     answer = cross_validate(estimator=model, X=x_data, y=y_data,
                             cv=k, scoring=scores, return_train_score=True)
     results_train = {"Training Accuracy": answer['train_accuracy'],
                      "Mean of Training Accuracy": answer['train_accuracy'].mean(),
-                     "Training Precision": answer['train_precision'],
-                     "Mean of Training Precision": answer['train_precision'].mean(),
-                     "Training Recall": answer['train_recall'],
-                     "Mean of Training Recall": answer['train_recall'].mean(),
-                     "Training F1_Score": answer['train_f1'], "Mean of Training F1_Score": answer['train_f1'].mean()}
+                     "Training Precision": answer['train_precision_micro'],
+                     "Mean of Training Precision": answer['train_precision_micro'].mean(),
+                     "Training Recall": answer['train_recall_micro'],
+                     "Mean of Training Recall": answer['train_recall_micro'].mean(),
+                     "Training F1_Score": answer['train_f1_micro'], "Mean of Training F1_Score": answer['train_f1_micro'].mean()}
     results_test = {"Validation Accuracy": answer['test_accuracy'],
                     "Mean of Validation Accuracy": answer['test_accuracy'].mean(),
-                    "Validation Precision": answer['test_precision'],
-                    "Mean of Validation Precision": answer['test_precision'].mean(),
-                    "Validation Recall": answer['test_recall'],
-                    "Mean of Validation Recall": answer['test_recall'].mean(),
-                    "Validation F1_Score": answer['test_f1'],
-                    "Mean of Validation F1_Score": answer['test_f1'].mean()}
+                    "Validation Precision": answer['test_precision_micro'],
+                    "Mean of Validation Precision": answer['test_precision_micro'].mean(),
+                    "Validation Recall": answer['test_recall_micro'],
+                    "Mean of Validation Recall": answer['test_recall_micro'].mean(),
+                    "Validation F1_Score": answer['test_f1_micro'],
+                    "Mean of Validation F1_Score": answer['test_f1_micro'].mean()}
     return results_train, results_test
 
 
