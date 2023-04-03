@@ -3,7 +3,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, recall_score, f1_score, precision_score, confusion_matrix
 import matplotlib.pyplot as plt
 from copy import deepcopy
-from sklearn.model_selection import cross_validate
+from sklearn.model_selection import cross_validate, GridSearchCV
 
 
 def cross_validation(model, x_data, y_data, k):
@@ -27,6 +27,7 @@ def cross_validation(model, x_data, y_data, k):
                     "Validation F1_Score": answer['test_f1_weighted'],
                     "Mean of Validation F1_Score": answer['test_f1_weighted'].mean()}
     estimators = answer['estimator']
+    print(answer)
     return results_train, results_test, estimators
 
 
