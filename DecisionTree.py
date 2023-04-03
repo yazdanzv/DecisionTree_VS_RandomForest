@@ -88,6 +88,14 @@ def make_decision_tree():
     temp_rec = np.array(temp_rec)
     temp_f1 = np.array(temp_f1)
     print(confusion_matrix_test)
+    # Confusion Matrix of Train DataSet
+    train_results = []
+    confusion_matrix_train = []
+    for i in range(len(estimators)):
+        train_results.append(estimators[i].predict(x_train))
+    for i in range(len(train_results)):
+        confusion_matrix_train.append(confusion_matrix(y_train, train_results[i]))
+    print(confusion_matrix_train)
     test_results = np.array([temp_acc.mean(), temp_pre.mean(), temp_rec.mean(), temp_f1.mean()])
     return decision_tree_train_result, decision_tree_test_result, test_results
 
