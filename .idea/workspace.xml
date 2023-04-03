@@ -44,7 +44,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Python.Best_RandomForest">
+  <component name="RunManager" selected="Python.Best_DecisionTree">
     <configuration name="Best_DecisionTree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DecisionTree_VS_RandomForest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Best_RandomForest" />
         <item itemvalue="Python.Best_DecisionTree" />
+        <item itemvalue="Python.Best_RandomForest" />
         <item itemvalue="Python.RandomForest" />
         <item itemvalue="Python.DecisionTree" />
         <item itemvalue="Python.Read_DataSet" />

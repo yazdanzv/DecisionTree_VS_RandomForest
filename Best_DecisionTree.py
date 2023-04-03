@@ -53,18 +53,19 @@ def make_decision_tree():
     rec_train = recall_score(y_train, result_train, average='weighted')
     f1_test = f1_score(y_test, result_test, average='weighted')
     f1_train = f1_score(y_train, result_train, average='weighted')
-    con_test = confusion_matrix(y_test, result_test)
-    con_train = confusion_matrix(y_train, result_train)
+    con_test = confusion_matrix(y_test, result_test, labels=[1, 2, 3, 4, 5])
+    con_train = confusion_matrix(y_train, result_train, labels=[1, 2, 3, 4, 5])
     test_metrics = [acc_test, pre_test, rec_test, f1_test]
     test_metrics = np.array(test_metrics)
     train_metrics = [acc_train, pre_train, rec_train, f1_train]
     train_metrics = np.array(train_metrics)
     make_plot("Decision Tree", "Metrics", "Test DataSet", test_metrics)
     make_plot("Decision Tree", "Metrics", "Train DataSet", train_metrics)
+    print("Test Confusion Matrix")
     print(con_test)
-    print()
+    print("Train Confusion Matrix")
     print(con_train)
-    print()
+    print("Best Parameters")
     print(params)
 
 
