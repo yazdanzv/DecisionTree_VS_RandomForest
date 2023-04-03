@@ -61,10 +61,11 @@ def make_random_forest():
     train_metrics = np.array(train_metrics)
     make_plot("Decision Tree", "Metrics", "Test DataSet", test_metrics)
     make_plot("Decision Tree", "Metrics", "Train DataSet", train_metrics)
+    print("Test Confusion Matrix")
     print(con_test)
-    print()
+    print("Train Confusion Matrix")
     print(con_train)
-    print()
+    print("Best Parameters")
     print(params)
 
 
