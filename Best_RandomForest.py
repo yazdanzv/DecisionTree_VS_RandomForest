@@ -40,8 +40,8 @@ def make_plot(x_label, y_label, plot_title, data):
 
 
 def make_random_forest():
-    decision_tree = RandomForestClassifier(criterion="entropy", random_state=0, min_samples_split=5, n_estimators=10)
-    estimator, params = cross_validation(decision_tree, x_train, y_train, k=5)
+    random_forest = RandomForestClassifier(criterion="entropy", random_state=0, min_samples_split=5, n_estimators=10)
+    estimator, params = cross_validation(random_forest, x_train, y_train, k=5)
     estimator.fit(x_train, y_train)
     result_test = estimator.predict(x_test)
     result_train = estimator.predict(x_train)
@@ -53,8 +53,8 @@ def make_random_forest():
     rec_train = recall_score(y_train, result_train, average='weighted')
     f1_test = f1_score(y_test, result_test, average='weighted')
     f1_train = f1_score(y_train, result_train, average='weighted')
-    con_test = confusion_matrix(y_test, result_test)
-    con_train = confusion_matrix(y_train, result_train)
+    con_test = confusion_matrix(y_test, result_test, labels=[1, 2, 3, 4, 5])
+    con_train = confusion_matrix(y_train, result_train, labels=[1, 2, 3, 4, 5])
     test_metrics = [acc_test, pre_test, rec_test, f1_test]
     test_metrics = np.array(test_metrics)
     train_metrics = [acc_train, pre_train, rec_train, f1_train]
@@ -67,5 +67,5 @@ def make_random_forest():
     print()
     print(params)
 
-make_random_forest()
 
+make_random_forest()
