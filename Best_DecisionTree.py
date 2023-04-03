@@ -67,6 +67,10 @@ def make_decision_tree():
     print(con_train)
     print("Best Parameters")
     print(params)
+    with open("Log.txt", 'a') as f:
+        f.writelines("Test Metrics : " + str(test_metrics) + "\n" + "Train Metrics : " + str(train_metrics) + "\n" +
+                     "Test Confusion Matrix : " + str(con_test) + "\n" + "Train Confusion Matrix : " + str(con_train) + "\n" +
+                     "Best Parameters of the Decision Tree : " + str(params) + "\n")
 
 
 make_decision_tree()
