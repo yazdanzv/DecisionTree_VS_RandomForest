@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-PATH = ".\\dataset_simple.csv"
+PATH = ".\\covtype.csv"
 SPLIT_RATIO = 0.7
 
 

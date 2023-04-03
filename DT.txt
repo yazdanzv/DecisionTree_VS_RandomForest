@@ -23,29 +23,4 @@ Train Confusion Matrix :
  [   470   6146      0      0      0]]
 Best Parameters of the Decision Tree : {'ccp_alpha': 0.001, 'criterion': 'entropy', 'max_depth': 8, 'max_features': 'auto'}
 Time : 0:43:51.237750
-************************************************************************************************************************************************
-Test Metrics : 
-Accuracy : 0.7057153020011016
-Precision : 0.6742888482997922
-Recall : 0.7057153020011016
-F1_Score : 0.6779351071399431
-Train Metrics : 
-Accuracy : 0.7049308103110832
-Precision : 0.6736450163231406
-Recall : 0.7049308103110832
-F1_Score : 0.6769309766613085
-Test Confusion Matrix : 
-[[40880 22648     1     0     0]
- [11227 72799   982     0     0]
- [    0  2275  8285     0     0]
- [    0     0   797     0     0]
- [   29  2677    34     0     0]]
-Train Confusion Matrix : 
-[[ 94943  52725      3      0      0]
- [ 26435 169445   2301      0      0]
- [     0   5318  19876      0      0]
- [     0      0   1950      0      0]
- [    61   6617     75      0      0]]
-Best Parameters of the Random Forest : {'ccp_alpha': 0.001, 'criterion': 'entropy', 'max_depth': 9, 'max_features': 'auto'}
-Time : 0:29:20.375203
 ************************************************************************
