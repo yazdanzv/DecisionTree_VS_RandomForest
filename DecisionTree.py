@@ -1,7 +1,7 @@
 from Read_DataSet import *
 from sklearn.model_selection import cross_validate
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, recall_score, f1_score, precision_score, confusion_matrix, make_scorer
+from sklearn.metrics import accuracy_score, recall_score, f1_score, precision_score, confusion_matrix
 import matplotlib.pyplot as plt
 from copy import deepcopy
 
@@ -10,7 +10,6 @@ def cross_validation(model, x_data, y_data, k):
     scores = ['accuracy', 'precision_weighted', 'recall_weighted', 'f1_weighted']
     answer = cross_validate(estimator=model, X=x_data, y=y_data,
                             cv=k, scoring=scores, return_train_score=True, return_estimator=True)
-    print(answer)
     results_train = {"Training Accuracy": answer['train_accuracy'],
                      "Mean of Training Accuracy": answer['train_accuracy'].mean(),
                      "Training Precision": answer['train_precision_weighted'],
@@ -77,21 +76,19 @@ def make_decision_tree():
     temp_pre = []
     temp_rec = []
     temp_f1 = []
+    confusion_matrix_test = []
     for i in range(len(results)):
         temp_acc.append(accuracy_score(y_test, results[i]))
         temp_pre.append(precision_score(y_test, results[i], average='weighted'))
         temp_rec.append(recall_score(y_test, results[i], average='weighted'))
         temp_f1.append(f1_score(y_test, results[i], average='weighted'))
+        confusion_matrix_test.append(confusion_matrix(y_test, results[i]))
     temp_acc = np.array(temp_acc)
     temp_pre = np.array(temp_pre)
     temp_rec = np.array(temp_rec)
     temp_f1 = np.array(temp_f1)
-    print(temp_acc)
-    print(temp_pre)
-    print(temp_rec)
-    print(temp_f1)
+    print(confusion_matrix_test)
     test_results = np.array([temp_acc.mean(), temp_pre.mean(), temp_rec.mean(), temp_f1.mean()])
-    print(test_results)
     return decision_tree_train_result, decision_tree_test_result, test_results
 
 
