@@ -7,6 +7,7 @@
     <list default="true" id="95121c77-b24e-47b2-bdaf-cb8677dc8fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Best_DecisionTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Best_DecisionTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Best_RandomForest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Best_RandomForest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

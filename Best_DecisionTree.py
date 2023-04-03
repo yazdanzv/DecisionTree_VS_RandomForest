@@ -1,5 +1,5 @@
 import copy
-
+import datetime
 import numpy as np
 
 from Read_DataSet import *
@@ -40,6 +40,7 @@ def make_plot(x_label, y_label, plot_title, data):
 
 
 def make_decision_tree():
+    start = datetime.datetime.now()
     decision_tree = DecisionTreeClassifier(criterion="entropy", random_state=0, min_samples_split=5)
     estimator, params = cross_validation(decision_tree, x_train, y_train, k=5)
     estimator.fit(x_train, y_train)
@@ -67,10 +68,18 @@ def make_decision_tree():
     print(con_train)
     print("Best Parameters")
     print(params)
+    end = datetime.datetime.now()
+    diff = end - start
     with open("Log.txt", 'a') as f:
-        f.writelines("Test Metrics : " + str(test_metrics) + "\n" + "Train Metrics : " + str(train_metrics) + "\n" +
-                     "Test Confusion Matrix : " + str(con_test) + "\n" + "Train Confusion Matrix : " + str(con_train) + "\n" +
-                     "Best Parameters of the Decision Tree : " + str(params) + "\n")
+        f.writelines("************************************************************************\n" +
+                     "Test Metrics : " + "\n" + "Accuracy : " + str(test_metrics[0]) + "\n" +
+                     "Precision : " + str(test_metrics[1]) + "\n" + "Recall : " + str(test_metrics[2]) + "\n" +
+                     "F1_Score : " + str(test_metrics[3]) + "\n" + "Train Metrics : " + "\n" + "Accuracy : " + str(train_metrics[0]) + "\n" +
+                     "Precision : " + str(train_metrics[1]) + "\n" + "Recall : " + str(train_metrics[2]) + "\n" +
+                     "F1_Score : " + str(train_metrics[3]) + "\n" +
+                     "Test Confusion Matrix : " + "\n" + str(con_test) + "\n" + "Train Confusion Matrix : " + "\n" + str(con_train) + "\n" +
+                     "Best Parameters of the Decision Tree : " + str(params) + "\n" +
+                     "Time : " + str(diff) + "\n" + "************************************************************************")
 
 
 make_decision_tree()
