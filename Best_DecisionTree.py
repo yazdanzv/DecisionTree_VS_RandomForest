@@ -67,5 +67,5 @@ def make_decision_tree():
     print()
     print(params)
 
-make_decision_tree()
 
+make_decision_tree()
