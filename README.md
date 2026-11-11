@@ -34,3 +34,7 @@ Results on Train & Validation dataset
 </br>
 Results on test Dataset
 <img src="https://github.com/yazdanzv/DecisionTree_VS_RandomForest/blob/main/sth2.png" alt="sth2">
+
+## Code guide
+
+`Read_DataSet.py` loads and splits the input dataset. `DecisionTree.py` and `RandomForest.py` train and evaluate the baseline models; `Best_DecisionTree.py` and `Best_RandomForest.py` contain cross-validation and plotting routines for tuned comparisons. The scripts use pandas, NumPy, scikit-learn, and Matplotlib. Update the dataset path in the loader as needed, then run the chosen model script from the repository root. The PNG files are saved plots from earlier runs, not results regenerated for this README.
